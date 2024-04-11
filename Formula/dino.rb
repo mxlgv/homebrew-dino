@@ -32,7 +32,6 @@ class Dino < Formula
 
 
   def install
-    system "brew sh"
     system "./configure"
     system "make"
     system "exit"
