@@ -2,7 +2,7 @@ class Dino < Formula
   desc "This is Dino+ A modern XMPP/Jabber client software, based on Dino"
   homepage ""
   url "https://github.com/mxlgv/dino/archive/refs/tags/v0.4.3-fork-3.tar.gz"
-  sha256 "e46f6d9564fb60841f5249dba4197a9e83b6ce3d338371c1f6877da038f2803c"
+  sha256 "e123cf60b041b8670f8f460cb919825a4fbcb83adbee84a5d5327aaf52c46547"
   license "GPL-3.0"
 
   depends_on "adwaita-icon-theme"
