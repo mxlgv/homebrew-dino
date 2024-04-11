@@ -32,9 +32,20 @@ class Dino < Formula
 
 
   def install
-    system "./configure"
-    system "make"
-    system "exit"
+    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
+    ggetopt_path = Formula['gnu-getopt'].bin
+    with_env({"PATH" => "#{ggetopt_path}:#{ENV['PATH']}"
+    }) do
+      system "./configure", *std_configure_args, "--with-libsoup3"
+      system "make"
+      system "make", "install"
+    end
+      ohai "renaming plugin extensions { .dylib => .so }"
+      plugins = lib/"dino/plugins"
+      plugins.glob("*.dylib").each do |plugin|
+        ohai "  * #{plugin.basename('.dylib')}"
+        plugin.rename(plugin.sub_ext('.so'))
+      end
   end
 
   test do
