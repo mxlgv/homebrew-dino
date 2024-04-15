@@ -40,7 +40,7 @@ class Dino < Formula
       system "make"
       system "make", "install"
       system "export DYLD_LIBRARY_PATH=/opt/homebrew/Cellar/dino/3/lib"
-      system "sudo ln -s /opt/homebrew/Cellar/dino/3/bin/dino /Applications/Dino"
+      # system "sudo ln -s /opt/homebrew/Cellar/dino/3/bin/dino /Applications/Dino"
     end
       ohai "renaming plugin extensions { .dylib => .so }"
       plugins = lib/"dino/plugins"
