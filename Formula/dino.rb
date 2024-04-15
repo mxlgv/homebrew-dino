@@ -39,6 +39,8 @@ class Dino < Formula
       system "./configure", *std_configure_args, "--with-libsoup3"
       system "make"
       system "make", "install"
+      system "export DYLD_LIBRARY_PATH=/opt/homebrew/Cellar/dino/3/lib"
+      system "ln -s /opt/homebrew/Cellar/dino/3/bin/dino /Applications/Dino"
     end
       ohai "renaming plugin extensions { .dylib => .so }"
       plugins = lib/"dino/plugins"
