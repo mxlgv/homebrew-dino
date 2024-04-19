@@ -6,6 +6,7 @@ class Dino < Formula
   license "GPL-3.0"
 
   depends_on "libadwaita"
+  depends_on "libcanberra"
   depends_on "adwaita-icon-theme"
   depends_on "glib"
   depends_on "glib-networking"
@@ -30,6 +31,7 @@ class Dino < Formula
   depends_on "gst-plugins-base"
   depends_on "srtp"
   depends_on "libnice"
+
   on_macos do
     patch do
       # FIXME: libsoup error, always use libsoup3
