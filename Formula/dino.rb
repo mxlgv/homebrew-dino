@@ -55,7 +55,7 @@ class Dino < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma: "d04ab7bd447c657fc7fd1e2dfba2287248ce342e9eb9a42c192525c9c8677952"
+    rebuild 2
+    sha256 arm64_sonoma: "3190b1b7fe5e0808e0dfeaddd087369c2795d923f6b862ac255bec7f4b35f724"
   end
 end
