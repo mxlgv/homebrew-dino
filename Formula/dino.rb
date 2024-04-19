@@ -5,6 +5,7 @@ class Dino < Formula
   sha256 "e123cf60b041b8670f8f460cb919825a4fbcb83adbee84a5d5327aaf52c46547"
   license "GPL-3.0"
 
+  depends_on "libadwaita"
   depends_on "adwaita-icon-theme"
   depends_on "glib"
   depends_on "glib-networking"
