@@ -30,6 +30,14 @@ class Dino < Formula
   depends_on "gst-plugins-base"
   depends_on "srtp"
   depends_on "libnice"
+  on_macos do
+    patch do
+      # FIXME: libsoup error, always use libsoup3
+      # --with-libsoup3 does not seem to work sometimes
+      url "https://raw.githubusercontent.com/mxlgv/homebrew-dino/master/formula-patches/libsoup.patch"
+      sha256 "424eedde217b1e753bfa87a2846506becde102555bb00545c36f666a2550290d"
+    end
+  end
 
 
   def install
@@ -37,7 +45,8 @@ class Dino < Formula
     ggetopt_path = Formula['gnu-getopt'].bin
     with_env({"PATH" => "#{ggetopt_path}:#{ENV['PATH']}"
     }) do
-      system "./configure", *std_configure_args, "--with-libsoup3"
+      # system "./configure", *std_configure_args, "--with-libsoup3"
+      system "./configure", *std_configure_args
       system "make"
       system "make", "install"
       system "export DYLD_LIBRARY_PATH=/opt/homebrew/Cellar/dino/3/lib"
