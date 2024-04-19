@@ -31,6 +31,7 @@ class Dino < Formula
   depends_on "srtp"
   depends_on "libnice"
 
+
   def install
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     ggetopt_path = Formula['gnu-getopt'].bin
@@ -52,10 +53,5 @@ class Dino < Formula
 
   test do
     assert_equal "Dino #{version}", shell_output("#{bin}/dino --version | head -n 1").strip
-  end
-
-  bottle do
-    rebuild 2
-    sha256 arm64_sonoma: "3190b1b7fe5e0808e0dfeaddd087369c2795d923f6b862ac255bec7f4b35f724"
   end
 end
